@@ -1,4 +1,5 @@
 import './App.css';
+import ListaDeTareas from './components/ListaDeTareas';
 
 function App() {
   return (
@@ -7,7 +8,8 @@ function App() {
         <h1>Manejador de Tareas</h1>
       </div>
       <div className='tareas-lista-principal'>
-        <div>Mis tareas:</div>
+        <div className='tareas-titulo'>Mis tareas:</div>
+        <ListaDeTareas />
       </div>
     </div>
   );
