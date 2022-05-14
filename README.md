@@ -16,10 +16,12 @@ Luego para lanzar la aplicación.
 ...
 
 ## Créditos 
-Para la realización de este proyecto se tomaron las enseñanzas d
+Para la realización de este proyecto se tomaron las enseñanzas de:
 
-**freeCodeCamp Español**
-**Vida MMR**
-**midudev**
+* **freeCodeCamp Español**
+
+* **Vida MMR**
+
+* **midudev**
 
 
