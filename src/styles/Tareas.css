@@ -32,3 +32,31 @@
     background-color: #828DA9;
     text-decoration: line-through;
 }
+
+.tarea-contenedor-icono{
+    display: flex;
+    flex-wrap: nowrap; 
+}
+
+.tarea-guardar-boton{
+    width: 100px;
+    height: 65px;
+    padding: 16px;
+    font-size: 18px;
+    background-color: #016FB9;
+    color: white;
+    border-radius: 0px 7px 7px 0px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.tarea-editar-input{
+    width: 400px;
+    min-height: 65px;
+    background-color: white;
+    font-size: 18px;
+    padding: 8px 15px 8px 20px;
+    margin: 5px 0;
+    border-radius: 7px 0px 0px 7px;
+    
+}
