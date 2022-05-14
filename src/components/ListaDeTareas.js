@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import TareaFormulario from "./TareaFormulario";
 import Tareas from "./Tareas";
 import '../styles/ListaDeTareas.css'
+import { useLocalStorage } from '../useLocalStorage'
 
 
 function ListaDeTareas(){
 
-    const [tareas, setTareas] = useState([]);
+    const [tareas, setTareas] = useLocalStorage('tareas', [])
 
     const agregarTarea = tarea =>{
         if(tarea.texto.trim()){
@@ -31,9 +32,16 @@ function ListaDeTareas(){
         setTareas(tareasActualizadas);
     }
 
+    const actualizarTarea = (id, texto) =>{
+        const temp = [...tareas];
+        const tarea = temp.find((item) => item.id === id)
+        tarea.texto = texto;
+        setTareas(temp);
+    }
+
     return(
         <>
-        <TareaFormulario onSubmit={agregarTarea}/>
+        <TareaFormulario agregarTarea={agregarTarea}/>
         <div className='tareas-lista-contenedor'>
             {
                 tareas.map((tarea)=>
@@ -43,7 +51,8 @@ function ListaDeTareas(){
                         texto={tarea.texto}
                         completada={tarea.completada}
                         eliminarTarea={eliminarTarea}
-                        completarTarea={completarTarea} />
+                        completarTarea={completarTarea}
+                        actualizarTarea={actualizarTarea} />
                 )
             }
         </div>

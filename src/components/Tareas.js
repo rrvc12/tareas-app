@@ -4,23 +4,37 @@ import { AiFillCloseSquare, AiFillEdit } from "react-icons/ai";
 import { useState } from "react";
 
 
-function Tareas({ id, texto, completada, completarTarea, eliminarTarea }){
+function Tareas({ id, texto, completada, completarTarea, eliminarTarea, actualizarTarea}){
 
     const [isEdit, setIsEdit] = useState(false);
 
+    const [newValue, setNewValue] = useState(texto);
 
 
+    const manejarCambioEditar = e =>{
+        setNewValue(e.target.value);
+    }
 
+
+    const manejarEnvioEditar = e =>{
+        e.preventDefault();
+    }
+
+    const actualizar = () =>{
+        actualizarTarea(id, newValue);
+        setIsEdit(false);
+    }
     return (
         <>
             {isEdit ? 
-                <form className='tarea-contenedor-editar'>
+                <form className='tarea-contenedor-editar' onSubmit={manejarEnvioEditar}>
                     <input 
                     className='tarea-editar-input' 
                     type='text' 
-                    value={texto}
-                    name='texto'/>
-                    <button className='tarea-guardar-boton'>Guardar</button>
+                    value={newValue}
+                    name='texto'
+                    onChange={manejarCambioEditar }/>
+                    <button className='tarea-guardar-boton' onClick={actualizar}>Guardar</button>
                 </form>
                 
                 

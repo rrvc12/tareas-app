@@ -18,7 +18,7 @@ function TareaFormulario(props){
             completada: false,
         }
 
-        props.onSubmit(tareaNueva);
+        props.agregarTarea(tareaNueva);
     }
 
 
