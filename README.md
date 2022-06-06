@@ -13,7 +13,7 @@ Luego para lanzar la aplicación.
 `npm start`
 
 ## Enlace
-...
+https://tareas-rrvc.herokuapp.com/
 
 ## Créditos 
 Para la realización de este proyecto se tomaron las enseñanzas de:
